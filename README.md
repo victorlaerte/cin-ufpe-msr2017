@@ -9,7 +9,8 @@ This page is used to share scripts to mining [Travis Torrent](https://travistorr
 ## Adding Scripts
 
 To add script you have to follow the sequence bellow:
-  - Write your script with respective path: cin-ufpe-msr2017/scripts/{{PROGRAMING_LANGUAGE}}/{{SCRIPT_ID}}-script-{{NAME_OF_SCRIPT}}/{{SCRIPT_FILE}}
+  - Write your script with respective path:
+  cin-ufpe-msr2017/scripts/{{PROGRAMING_LANGUAGE}}/{{SCRIPT_ID}}-script-{{NAME_OF_SCRIPT}}/{{SCRIPT_FILE}}
   
   ```
   cin-ufpe-msr2017/scripts/java/01-script-example/Example.java
@@ -17,7 +18,7 @@ To add script you have to follow the sequence bellow:
 
   - After push your script you must update README.md with instructions with how to run and obtain results in the [Scripts Table](#scripts-table)
 
-## Adding Scripts
+## Adding Other Files
 To add files there's not scripts such as documents and others follow the sequence bellow:
   - Create the directory tree like: cin-ufpe-msr2017/{{DOCUMENT_TYPE}}/{{DOCUMENT_FILE}}
   
