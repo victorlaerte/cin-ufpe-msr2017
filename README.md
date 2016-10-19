@@ -46,7 +46,7 @@ To add files there's not scripts such as documents and others follow the sequenc
 
 Name | Link | Description | How To
 ------------ | ------------ | ------------- | -------------
-01-script-example | [Example.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/01-script-example/src/Example.java) | Script only for example | To run this script first you have to compile java file `javac Example.java` and after that run the code: `java Example parameter1 parameter2 parameter3` and the result will be shown in console output
+01-script-example | [Example.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/01-script-example/src/Example.java) | Script only for example | To run this script first you have to compile java file `javac Example.java` and after that run the code: `java Example arg1 arg2 arg3` and the result will be shown in console output
 
 ## Files Table
 
