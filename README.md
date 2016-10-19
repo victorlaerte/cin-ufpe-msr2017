@@ -34,7 +34,6 @@ To add files there's not scripts such as documents and others follow the sequenc
   
   ```
   cin-ufpe-msr2017
-  |- scripts
        |- document-type
                     |- file-name.extension
                     
