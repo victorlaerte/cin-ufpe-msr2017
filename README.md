@@ -5,6 +5,7 @@ This page is used to share scripts to mining [Travis Torrent](https://travistorr
 * [How to add script](#adding-scripts)
 * [How to add other files](#adding-other-files)
 * [Scripts Table](#scripts-table)
+* [Files Table](#files-table)
 
 ## Adding Scripts
 
