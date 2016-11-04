@@ -1,4 +1,4 @@
-# cin-ufpe-msr2017-scripts
+# cin-ufpe-msr2017
 
 This page is used to share scripts to mining [Travis Torrent](https://travistorrent.testroots.org/) repository.
 
@@ -47,6 +47,7 @@ To add files there's not scripts such as documents and others follow the sequenc
 Name | Link | Description | How To
 ------------ | ------------ | ------------- | -------------
 01-script-example | [Example.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/01-script-example/src/Example.java) | Script only for example | To run this script first you have to compile java file `javac Example.java` and after that run the code: `java Example arg1 arg2 arg3` and the result will be shown in console output
+02-script-extract-new-file-with-custom-variable | [MsrMain.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/02-script-extract-new-file-with-custom-variable/MsrMain.java) | Script to extract only desired variables in a new csv file | To run this script first you have to compile java file `javac MsrMain.java` and after that run the code: `java MsrMain absolutePathOfInputCsv.csv absolutePathOfOutput.csv row gh_project_name tr_build_number` NOTE: first argument is the input csv file of travistorrent (You can find it at travistorrent site), second argument is output paths's file, from the third all of them must to be your desired variable name to be filtered
 
 ## Files Table
 
