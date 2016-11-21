@@ -48,6 +48,7 @@ Name | Link | Description | How To
 ------------ | ------------ | ------------- | -------------
 01-script-example | [Example.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/01-script-example/src/Example.java) | Script only for example | To run this script first you have to compile java file `javac Example.java` and after that run the code: `java Example arg1 arg2 arg3` and the result will be shown in console output
 02-script-extract-new-file-with-custom-variable | [msr-mysql.sql](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/sql/02-script-extract-new-file-with-custom-variable/msr-mysql.sql) | Script to extract only desired variables in a new csv file | To run this script first you have to execute it with Mysql DB
+03-script-tr_testdurationBytr_duration | [MsrMain.java](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/scripts/java/03-script-tr_testdurationBytr_duration/MsrMain.java) | Script to calculate proportion between tr_testduration and tr_duration. It creates a new csv with tr_testduration/tr_duration column. To run this script first you have to compile java file `javac MsrMain.java` and after that run the code: `java MsrMain absolutePathOfInputCsv.csv absolutePathOfOutput.csv` NOTE: first argument is the input csv file of travistorrent (You can find it at travistorrent site), second argument is output paths's file
 
 ## Files Table
 
