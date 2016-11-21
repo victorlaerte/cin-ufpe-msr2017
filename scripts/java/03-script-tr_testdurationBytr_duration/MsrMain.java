@@ -81,9 +81,7 @@ public class MsrMain2 {
 				}
 			}
 
-		} catch (
-
-		IOException e) {
+		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
