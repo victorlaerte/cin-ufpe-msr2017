@@ -56,4 +56,4 @@ Name | Link | Description | How To
 Name | Link | Description
 ------------ | ------------ | -------------
 output.txt | [output.txt](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/results/output.txt) | Files showing result of example script
-msr-final.csv | [msr-final.csv](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/results/msr-final.csv) | Files adapted to run logitic regression with R
+msr-final.csv | [msr-final.csv](https://github.com/victorlaerte/cin-ufpe-msr2017/blob/master/results/msr-final.csv) | Files adapted to run logistic regression with R
