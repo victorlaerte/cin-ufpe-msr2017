@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-public class MsrMain4 {
+public class MsrMain {
 
 	private static String file1Path = "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-copy.csv";
 	private static String file2Path = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined.csv";
