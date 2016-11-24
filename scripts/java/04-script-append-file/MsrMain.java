@@ -8,8 +8,8 @@ import java.io.OutputStreamWriter;
 
 public class MsrMain {
 
-	private static String file1Path = "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-copy.csv";
-	private static String file2Path = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined.csv";
+	private static String file1Path = "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-1-copy.csv";
+	private static String file2Path = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined-1.csv";
 
 	public static void main(String[] args) {
 
@@ -39,7 +39,7 @@ public class MsrMain {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(path2)))) {
 
-			try (FileOutputStream fos = new FileOutputStream(new File(path2), true)) {
+			try (FileOutputStream fos = new FileOutputStream(new File(path1), true)) {
 
 				try (OutputStreamWriter osw = new OutputStreamWriter(fos)) {
 

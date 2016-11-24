@@ -12,11 +12,14 @@ import java.util.Map;
 
 public class MsrMain {
 
-	// private static String defaultInputFileName =
+	// private static final String DEFAULT_INPUT_FILE_NAME =
 	// "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947.csv";
-	private static String defaultInputFileName = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350.csv";
-	private static String defaultOutputFileName = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined.csv";
-	private static String newHeaderLine = "row,response_variable,time_spent_in_tests_5_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,getGh_test_churn_5_of_total,gh_tests_added";
+	// private static final String DEFAULT_OUTPUT_FILE_NAME =
+	// "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-1.csv";
+	private static final String DEFAULT_INPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350.csv";
+	private static final String DEFAULT_OUTPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined-1.csv";
+	private static final String NEW_HEADER_LINE = "row,response_variable,time_spent_in_tests_5_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,getGh_test_churn_5_of_total,gh_tests_added";
+	private static final double PERCENT_LIMIT = 0.01;
 
 	private static List<String> defaultDesiredHeaders = Arrays.asList(new String[] { "row", "tr_status",
 			"tr_tests_failed", "tr_duration", "tr_testduration", "gh_test_lines_per_kloc", "gh_test_cases_per_kloc",
@@ -27,8 +30,8 @@ public class MsrMain {
 
 	public static void main(String[] args) {
 
-		String inputFile = defaultInputFileName;
-		String outputFile = defaultOutputFileName;
+		String inputFile = DEFAULT_INPUT_FILE_NAME;
+		String outputFile = DEFAULT_OUTPUT_FILE_NAME;
 
 		if (args != null) {
 
@@ -130,13 +133,13 @@ public class MsrMain {
 		sb.append(CSV_INPUT_SEPARATOR);
 		sb.append(getResponseVariable(keyValueMap));
 		sb.append(CSV_INPUT_SEPARATOR);
-		sb.append(getTime_spent_in_tests_5_of_total(keyValueMap));
+		sb.append(getTime_spent_in_tests_X_percent_of_total(keyValueMap));
 		sb.append(CSV_INPUT_SEPARATOR);
 		sb.append(keyValueMap.get("gh_test_lines_per_kloc"));
 		sb.append(CSV_INPUT_SEPARATOR);
 		sb.append(keyValueMap.get("gh_test_cases_per_kloc"));
 		sb.append(CSV_INPUT_SEPARATOR);
-		sb.append(getGh_test_churn_5_of_total(keyValueMap));
+		sb.append(getGh_test_churn_X_percent_of_total(keyValueMap));
 		sb.append(CSV_INPUT_SEPARATOR);
 		sb.append(keyValueMap.get("gh_tests_added"));
 
@@ -172,7 +175,7 @@ public class MsrMain {
 		return sb.toString();
 	}
 
-	private static int getGh_test_churn_5_of_total(Map<String, String> keyValueMap) {
+	private static int getGh_test_churn_X_percent_of_total(Map<String, String> keyValueMap) {
 
 		double ghTestChurn = 0;
 
@@ -186,7 +189,7 @@ public class MsrMain {
 
 		double result = (ghTestChurn / (ghTestChurn + ghProductionChurn));
 
-		if (result > 0.05) {
+		if (result > PERCENT_LIMIT) {
 
 			return 1;
 		} else {
@@ -194,7 +197,7 @@ public class MsrMain {
 		}
 	}
 
-	private static int getTime_spent_in_tests_5_of_total(Map<String, String> keyValueMap) {
+	private static int getTime_spent_in_tests_X_percent_of_total(Map<String, String> keyValueMap) {
 
 		double trTestDuration = 0;
 
@@ -208,7 +211,7 @@ public class MsrMain {
 
 		double result = (trTestDuration / trDuration);
 
-		if (result > 0.05) {
+		if (result > PERCENT_LIMIT) {
 			return 1;
 		} else {
 			return 0;
@@ -233,9 +236,9 @@ public class MsrMain {
 			}
 		}
 
-		System.out.println(newHeaderLine);
+		System.out.println(NEW_HEADER_LINE);
 
-		bw.write(newHeaderLine);
+		bw.write(NEW_HEADER_LINE);
 		bw.newLine();
 	}
 
