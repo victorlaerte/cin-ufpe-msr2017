@@ -1,0 +1,66 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+[History restored from /Users/victoroliveira/.Rapp.history]
+
+> tab1=read.csv('/Users/victoroliveira/Documents/workspace/cin-ufpe-msr2017/results/msr-final-5.csv')
+> varGLM = glm(response_variable~{time_spent_in_tests_5_of_total}+{gh_test_lines_per_kloc}+{gh_test_cases_per_kloc}+{gh_test_churn_5_of_total}+{gh_tests_added}, data=tab1, (family=binomial(link='logit')))
+Warning message:
+glm.fit: fitted probabilities numerically 0 or 1 occurred 
+> summary(varGLM)
+
+Call:
+glm(formula = response_variable ~ {
+    time_spent_in_tests_5_of_total
+} + {
+    gh_test_lines_per_kloc
+} + {
+    gh_test_cases_per_kloc
+} + {
+    gh_test_churn_5_of_total
+} + {
+    gh_tests_added
+}, family = (family = binomial(link = "logit")), data = tab1)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-8.4904  -0.9862  -0.6168   1.2502   5.2230  
+
+Coefficients:
+                                           Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                              -4.950e-01  7.814e-03  -63.34  < 2e-16 ***
+{\n    time_spent_in_tests_5_of_total\n} -1.390e+00  1.669e-02  -83.25  < 2e-16 ***
+{\n    gh_test_lines_per_kloc\n}          7.025e-05  3.788e-06   18.55  < 2e-16 ***
+{\n    gh_test_cases_per_kloc\n}         -7.397e-04  4.488e-05  -16.48  < 2e-16 ***
+{\n    gh_test_churn_5_of_total\n}        3.058e-01  1.058e-02   28.91  < 2e-16 ***
+{\n    gh_tests_added\n}                 -2.435e-01  7.514e-02   -3.24  0.00119 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 216695  on 164295  degrees of freedom
+Residual deviance: 205706  on 164290  degrees of freedom
+AIC: 205718
+
+Number of Fisher Scoring iterations: 8
+
+> 

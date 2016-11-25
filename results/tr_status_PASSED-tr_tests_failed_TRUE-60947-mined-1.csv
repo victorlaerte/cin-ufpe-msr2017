@@ -1,4 +1,4 @@
-row,response_variable,time_spent_in_tests_5_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_1_of_total,gh_tests_added
+row,response_variable,time_spent_in_tests_1_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_1_of_total,gh_tests_added
 11898,1,0,3175.69352708058,211.360634081902,1,0
 11900,1,0,3175.69352708058,211.360634081902,1,0
 11910,1,0,3175.69352708058,211.360634081902,1,0

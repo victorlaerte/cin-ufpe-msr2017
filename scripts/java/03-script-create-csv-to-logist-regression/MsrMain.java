@@ -20,7 +20,8 @@ public class MsrMain {
 	private static final String DEFAULT_OUTPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined-1.csv";
 	private static final double PERCENT_LIMIT = 0.01;
 	private static final String NEW_HEADER_LINE = "row,response_variable,time_spent_in_tests_" + (PERCENT_LIMIT * 10)
-			+ "_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_5_of_total,gh_tests_added";
+			+ "_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_" + (PERCENT_LIMIT * 10)
+			+ "_of_total,gh_tests_added";
 
 	private static List<String> defaultDesiredHeaders = Arrays.asList(new String[] { "row", "tr_status",
 			"tr_tests_failed", "tr_duration", "tr_testduration", "gh_test_lines_per_kloc", "gh_test_cases_per_kloc",
