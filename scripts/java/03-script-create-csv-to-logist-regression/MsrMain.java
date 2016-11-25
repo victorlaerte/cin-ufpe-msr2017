@@ -146,13 +146,11 @@ public class MsrMain {
 		return sb.toString();
 	}
 
-	private static String getResponseVariable(Map<String, String> keyValueMap) throws Exception {
+	private static int getResponseVariable(Map<String, String> keyValueMap) throws Exception {
 
 		StringBuilder sb = new StringBuilder();
 		String buildStatus = keyValueMap.get("tr_status");
 		String testStatus = keyValueMap.get("tr_tests_failed");
-
-		sb.append("B");
 
 		if (buildStatus.equalsIgnoreCase("passed")) {
 			sb.append("P");
@@ -165,14 +163,19 @@ public class MsrMain {
 		sb.append("T");
 
 		if (Boolean.valueOf(testStatus) == false) {
-
 			sb.append("F");
 		} else {
 			throw new Exception("We don't want this line");
 		}
 
 		// possible results: BPTF, BFTF
-		return sb.toString();
+		if (sb.toString().equals("BPTF")) {
+			return 1;
+		} else if (sb.toString().equals("BFTF")) {
+			return 0;
+		} else {
+			throw new Exception("No such acceptable response variable");
+		}
 	}
 
 	private static int getGh_test_churn_X_percent_of_total(Map<String, String> keyValueMap) {
