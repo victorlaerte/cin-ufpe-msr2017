@@ -1,0 +1,75 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.68 (7238) x86_64-apple-darwin13.4.0]
+
+[History restored from /Users/victoroliveira/.Rapp.history]
+
+> library(nortest)
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_time_spent_in_tests_1_of_total.csv')
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file '/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_time_spent_in_tests_1_of_total.csv': No such file or directory
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/time_spent_in_tests_1_of_total.csv')
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file '/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/time_spent_in_tests_1_of_total.csv': No such file or directory
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/time_spent_in_tests_1_of_total.csv')
+> ad.test(table$time_spent_in_tests_1_of_total)
+
+	Anderson-Darling normality test
+
+data:  table$time_spent_in_tests_1_of_total
+A = 29769, p-value < 2.2e-16
+
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_test_churn_1_of_total.csv')
+> ad.test(table$gh_test_churn_1_of_total)
+
+	Anderson-Darling normality test
+
+data:  table$gh_test_churn_1_of_total
+A = 32336, p-value < 2.2e-16
+
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_test_lines_per_kloc.csv')
+> ad.test(table$gh_test_lines_per_kloc)
+
+	Anderson-Darling normality test
+
+data:  table$gh_test_lines_per_kloc
+A = 52211, p-value < 2.2e-16
+
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_test_cases_per_kloc.csv')
+> ad.test(table$gh_test_cases_per_kloc)
+
+	Anderson-Darling normality test
+
+data:  table$gh_test_cases_per_kloc
+A = 51494, p-value < 2.2e-16
+
+> table = read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/Arquivos para testar normalidade/gh_tests_added.csv')
+> ad.test(table$gh_tests_added)
+
+	Anderson-Darling normality test
+
+data:  table$gh_tests_added
+A = 63260, p-value < 2.2e-16
+
+> 

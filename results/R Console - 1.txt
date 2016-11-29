@@ -21,8 +21,8 @@ Type 'q()' to quit R.
 
 [History restored from /Users/victoroliveira/.Rapp.history]
 
-> tab1=read.csv('/Users/victoroliveira/Documents/workspace/cin-ufpe-msr2017/results/msr-final-1.csv')
-> varGLM = glm(response_variable~{time_spent_in_tests_1_of_total}+{gh_test_lines_per_kloc}+{gh_test_cases_per_kloc}+{gh_test_churn_1_of_total}+{gh_tests_added}, data=tab1, (family=binomial(link='logit')))
+> tab1=read.csv('/Users/victoroliveira/Downloads/MSR/Results Pre Statistic/1 Percent/msr-final-1.csv')
+> varGLM = glm(response_variable~{time_spent_in_tests_1_of_total}+{gh_test_churn_1_of_total}+{gh_test_lines_per_kloc}+{gh_test_cases_per_kloc}+{gh_tests_added}, data=tab1, (family=binomial(link='logit')))
 Warning message:
 glm.fit: fitted probabilities numerically 0 or 1 occurred 
 > summary(varGLM)
@@ -31,35 +31,35 @@ Call:
 glm(formula = response_variable ~ {
     time_spent_in_tests_1_of_total
 } + {
+    gh_test_churn_1_of_total
+} + {
     gh_test_lines_per_kloc
 } + {
     gh_test_cases_per_kloc
-} + {
-    gh_test_churn_1_of_total
 } + {
     gh_tests_added
 }, family = (family = binomial(link = "logit")), data = tab1)
 
 Deviance Residuals: 
-   Min      1Q  Median      3Q     Max  
--8.490  -1.040  -0.729   1.187   5.305  
+    Min       1Q   Median       3Q      Max  
+-8.4904  -1.0607  -0.7439   1.2231   5.3032  
 
 Coefficients:
-                                           Estimate Std. Error z value Pr(>|z|)    
-(Intercept)                              -3.276e-01  8.800e-03 -37.230  < 2e-16 ***
-{\n    time_spent_in_tests_1_of_total\n} -8.802e-01  1.075e-02 -81.860  < 2e-16 ***
-{\n    gh_test_lines_per_kloc\n}          6.559e-05  3.591e-06  18.261  < 2e-16 ***
-{\n    gh_test_cases_per_kloc\n}         -6.806e-04  4.262e-05 -15.971  < 2e-16 ***
-{\n    gh_test_churn_1_of_total\n}        2.890e-01  1.055e-02  27.399  < 2e-16 ***
-{\n    gh_tests_added\n}                 -2.546e-01  7.704e-02  -3.304 0.000953 ***
+                                           Estimate Std. Error  z value Pr(>|z|)    
+(Intercept)                              -1.012e+00  9.516e-03 -106.368  < 2e-16 ***
+{\n    time_spent_in_tests_1_of_total\n}  8.853e-01  1.075e-02   82.353  < 2e-16 ***
+{\n    gh_test_churn_1_of_total\n}       -1.545e-01  1.103e-02  -14.006  < 2e-16 ***
+{\n    gh_test_lines_per_kloc\n}          6.663e-05  3.590e-06   18.559  < 2e-16 ***
+{\n    gh_test_cases_per_kloc\n}         -6.872e-04  4.262e-05  -16.123  < 2e-16 ***
+{\n    gh_tests_added\n}                 -2.552e-01  7.713e-02   -3.309 0.000935 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
     Null deviance: 216695  on 164295  degrees of freedom
-Residual deviance: 207452  on 164290  degrees of freedom
-AIC: 207464
+Residual deviance: 208000  on 164290  degrees of freedom
+AIC: 208012
 
 Number of Fisher Scoring iterations: 8
 
