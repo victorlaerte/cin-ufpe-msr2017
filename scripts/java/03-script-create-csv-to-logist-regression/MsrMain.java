@@ -13,15 +13,17 @@ import java.util.Map;
 public class MsrMain {
 
 	// private static final String DEFAULT_INPUT_FILE_NAME =
-	// "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947.csv";
-	// private static final String DEFAULT_OUTPUT_FILE_NAME =
-	// "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-1.csv";
-	private static final String DEFAULT_INPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350.csv";
-	private static final String DEFAULT_OUTPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined-1.csv";
+	// "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350.csv";
+	private static final String DEFAULT_INPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947.csv";
 	private static final double PERCENT_LIMIT = 0.01;
-	private static final String NEW_HEADER_LINE = "row,response_variable,time_spent_in_tests_" + (PERCENT_LIMIT * 10)
-			+ "_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_" + (PERCENT_LIMIT * 10)
-			+ "_of_total,gh_tests_added";
+	// private static final String DEFAULT_OUTPUT_FILE_NAME =
+	// "/Users/victoroliveira/Downloads/MSR/tr_status_FAILED-tr_tests_failed_TRUE-103350-mined-"
+	// + (int) (PERCENT_LIMIT * 100) + ".csv";
+	private static final String DEFAULT_OUTPUT_FILE_NAME = "/Users/victoroliveira/Downloads/MSR/tr_status_PASSED-tr_tests_failed_TRUE-60947-mined-"
+			+ (int) (PERCENT_LIMIT * 100) + ".csv";
+	private static final String NEW_HEADER_LINE = "row,response_variable,time_spent_in_tests_"
+			+ (int) (PERCENT_LIMIT * 100) + "_of_total,gh_test_lines_per_kloc,gh_test_cases_per_kloc,gh_test_churn_"
+			+ (int) (PERCENT_LIMIT * 100) + "_of_total,gh_tests_added";
 
 	private static List<String> defaultDesiredHeaders = Arrays.asList(new String[] { "row", "tr_status",
 			"tr_tests_failed", "tr_duration", "tr_testduration", "gh_test_lines_per_kloc", "gh_test_cases_per_kloc",
@@ -154,6 +156,8 @@ public class MsrMain {
 		String buildStatus = keyValueMap.get("tr_status");
 		String testStatus = keyValueMap.get("tr_tests_failed");
 
+		sb.append("B");
+
 		if (buildStatus.equalsIgnoreCase("passed")) {
 			sb.append("P");
 		} else if (buildStatus.equalsIgnoreCase("failed")) {
@@ -171,9 +175,9 @@ public class MsrMain {
 		}
 
 		// possible results: BPTF, BFTF
-		if (sb.toString().equals("BPTF")) {
+		if (sb.toString().equalsIgnoreCase("BPTF")) {
 			return 1;
-		} else if (sb.toString().equals("BFTF")) {
+		} else if (sb.toString().equalsIgnoreCase("BFTF")) {
 			return 0;
 		} else {
 			throw new Exception("No such acceptable response variable");
@@ -194,7 +198,7 @@ public class MsrMain {
 
 		double result = (ghTestChurn / (ghTestChurn + ghProductionChurn));
 
-		if (result > PERCENT_LIMIT) {
+		if (result < PERCENT_LIMIT) {
 
 			return 1;
 		} else {
@@ -216,7 +220,7 @@ public class MsrMain {
 
 		double result = (trTestDuration / trDuration);
 
-		if (result > PERCENT_LIMIT) {
+		if (result < PERCENT_LIMIT) {
 			return 1;
 		} else {
 			return 0;
